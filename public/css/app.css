@@ -11100,3 +11100,20 @@ a.text-dark:focus {
   }
 }
 
+.navbar-dark a.navbar-brand {
+  color: #ccc;
+}
+
+.navbar-dark a.navbar-brand:hover {
+  color: #fafa;
+}
+
+.nav-item a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.nav-item a:hover {
+  color: #fafa;
+}
+

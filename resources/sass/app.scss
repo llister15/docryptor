@@ -2,3 +2,18 @@
 
 
 @import "node_modules/bootstrap-scss/bootstrap.scss";
+
+
+.navbar-dark a.navbar-brand {
+	color: #ccc;
+	&:hover {
+		color: #fafa;
+	}
+}
+.nav-item a {
+	color: #ccc;
+	text-decoration: none;
+	&:hover {
+		color: #fafa;
+	}
+}
