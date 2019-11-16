@@ -25,4 +25,27 @@ class PagesController extends Controller {
 		$title = 'About';
 		return view( 'pages.about' )->with( 'title', $title );
 	}
+
+	public function review() {
+		$title = 'Review';
+		return view( 'pages.review' )->with( 'title', $title );
+	}
+
+	public function users() {
+		$title = 'Users';
+		return view( 'pages.users' )->with( 'title', $title );
+	}
+
+
+	public function reports() {
+			$title = 'Reports';
+			return view( 'pages.reports' )->with( 'title', $title );
+	}
+
+
+	public function integrations() {
+			$title = 'Integrations';
+			return view( 'pages.integrations' )->with( 'title', $title );
+	}
+
 }

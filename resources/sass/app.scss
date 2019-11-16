@@ -1,19 +1,18 @@
 // Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
 
+// Variables
+@import 'variables';
 
-@import "node_modules/bootstrap-scss/bootstrap.scss";
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
 
+// Dashboard Page
+@import 'dashboard';
 
-.navbar-dark a.navbar-brand {
-	color: #ccc;
-	&:hover {
-		color: #fafa;
-	}
-}
-.nav-item a {
-	color: #ccc;
-	text-decoration: none;
-	&:hover {
-		color: #fafa;
-	}
-}
+// Upload Page
+@import 'uploadpage';
+
+// Main Page
+@import 'main';
+
