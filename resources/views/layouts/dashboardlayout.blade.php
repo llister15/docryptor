@@ -75,9 +75,6 @@
       </div>
     </div>
   </nav>
-
-  <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-    @yield('content')
     <div class="container-fluid">
       <div class="row">
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
@@ -122,9 +119,13 @@
             </ul>
           </div>
         </nav>
-      </div>
+  <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+    @yield('content')
   </main>
 
+  </div>
+</div>
+    
     @yield('scripts')
 
     <footer class="footer mt-auto py-3">

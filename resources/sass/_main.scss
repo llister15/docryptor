@@ -15,3 +15,11 @@
 .sidebar .nav-link.active {
 	color: #cd1735;
 }
+
+.btn-link {
+	color: #343a40;
+	&:hover {
+		text-decoration: none;
+		color: #cca;
+	}
+}

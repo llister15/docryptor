@@ -11247,3 +11247,12 @@ body {
   color: #cd1735;
 }
 
+.btn-link {
+  color: #343a40;
+}
+
+.btn-link:hover {
+  text-decoration: none;
+  color: #cca;
+}
+
