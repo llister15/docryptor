@@ -1,5 +1,6 @@
 ![Image description](https://wonkasoft.com/wp-content/uploads/2019/11/docryptor-logo.png)
-#Docryptor
+
+# Docryptor
 
 ## Store and Manage
 Upload multiple files at once and keep them forever on this site. If you're using FireFox or Chrome, you can simply drag & drop your files to begin uploading. We'll take care of the rest.
