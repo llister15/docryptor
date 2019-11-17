@@ -3,12 +3,12 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8 text-center">
+        <div class="col-md-8 text-center py-3">
             <img src="{{asset('img/docryptor-logo.png')}}" />
         </div>
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header"><strong>{{ __('Login') }}</strong></div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">

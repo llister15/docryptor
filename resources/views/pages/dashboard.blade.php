@@ -1,5 +1,13 @@
 @extends('layouts.dashboardlayout')
 
+@section('currentDashboard')
+  <span class="sr-only">(current)</span>
+@endsection
+
+@section('activeDashboard')
+active
+@endsection
+
 @section('content')
 
   <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
@@ -146,4 +154,49 @@
       </tbody>
     </table>
   </div>
+  @endsection
+
+  @section('scripts')
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <!-- Graphs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+
+    <script>
+      var ctx = document.getElementById("myChart");
+      var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          datasets: [{
+            data: [0, 1, 2, 3, 4, 5, 6],
+            lineTension: 0,
+            backgroundColor: 'transparent',
+            borderColor: '#cd1735',
+            borderWidth: 4,
+            pointBackgroundColor: '#cd1735'
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: false
+              }
+            }]
+          },
+          legend: {
+            display: false,
+          }
+        }
+      });
+    </script>
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/feather-icons@4.24.1/dist/feather.min.js"></script>
+  <script>
+    feather.replace()
+  </script>
   @endsection

@@ -1,4 +1,17 @@
+.navbar {
+	z-index: 999;
+}
+
 .navbar-brand {
 	background-color: #343a40;
 	box-shadow:none;
+}
+
+.card-header {
+	background-color: #cd1735;
+	color: #fff;
+}
+
+.sidebar .nav-link.active {
+	color: #cd1735;
 }
