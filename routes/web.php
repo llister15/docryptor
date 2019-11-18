@@ -12,13 +12,19 @@
 */
 
 Route::get( '/', 'PagesController@index' );
-Route::get( '/dashboard', 'PagesController@dashboard' );
-Route::get( '/upload', 'PagesController@upload' );
 Route::get( '/about', 'PagesController@about' );
-Route::get( '/review', 'PagesController@review' );
-Route::get( '/users', 'PagesController@users' );
-Route::get( '/reports', 'PagesController@reports' );
-Route::get( '/integrations', 'PagesController@integrations' );
+Route::group(
+	[ 'middleware' => [ 'auth' ] ],
+	function() {
+		Route::get( '/dashboard', 'PagesController@dashboard' );
+		Route::get( '/upload', 'PagesController@upload' );
+		Route::get( '/review', 'PagesController@review' );
+		Route::get( '/users', 'PagesController@users' );
+		Route::get( '/reports', 'PagesController@reports' );
+		Route::get( '/integrations', 'PagesController@integrations' );
+	}
+);
+
 
 Auth::routes();
 

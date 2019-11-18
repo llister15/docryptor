@@ -14,7 +14,7 @@
                     <div class="msg">OH!<span class="triangle"></span></div>
                 </div>
                 <h2 class="h1">Sorry! Page not found</h2>
-                <a href="/dashboard" class="btn btn-outline-secondary">Return to Dashboard</a>
+                  <a href="{{ url('/') }}" class="btn btn-outline-secondary">Return to Home Page</a>
             </div>
         </div>
     </div>

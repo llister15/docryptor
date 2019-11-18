@@ -17,7 +17,7 @@
         <div class="row">
           <div class="col-md-4">
             <h2>Store and Manage</h2>
-            <p>Upload multiple files at once and keep them forever on this site. If you're using FireFox or Chrome, you can simply drag & drop your files to begin uploading. We'll take care of the rest.</p>
+            <p>Upload multiple files at once and keep them forever on this site. If you're using FireFox or Chrome, you can simply drag & drop your files to begin uploading.</p>
             <p><a class="btn btn-outline-danger" href="/register" role="button">Get Started &raquo;</a></p>
           </div>
           <div class="col-md-4">

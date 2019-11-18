@@ -24,8 +24,10 @@
 </head>
 <body class="d-flex flex-column h-100">
   <div id="app">
+
+  </div>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
-      <div class="container">
+      <div class="container-fluid">
         <a class="navbar-brand" href="{{ url('/') }}">
           <img src="{{asset('img/docryptor-nav-logo.png')}}" width="25" height="25">
           {{ config( 'app.name', 'Docryptor') }}
@@ -59,11 +61,14 @@
               </a>
 
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{ url('dashboard') }}">
+                    {{ __('Dashboard') }}
+                </a>
                 <a class="dropdown-item" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
-                {{ __('Logout') }}
-              </a>
+                  {{ __('Logout') }}
+                </a>
 
               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
@@ -126,7 +131,48 @@
   </div>
 </div>
     
-    @yield('scripts')
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+      <!-- Graphs -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+
+      <script>
+        var ctx = document.getElementById("myChart");
+        var myChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            datasets: [{
+              data: [0, 1, 2, 3, 4, 5, 6],
+              lineTension: 0,
+              backgroundColor: 'transparent',
+              borderColor: '#cd1735',
+              borderWidth: 4,
+              pointBackgroundColor: '#cd1735'
+            }]
+          },
+          options: {
+            scales: {
+              yAxes: [{
+                ticks: {
+                  beginAtZero: false
+                }
+              }]
+            },
+            legend: {
+              display: false,
+            }
+          }
+        });
+      </script>
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/feather-icons@4.24.1/dist/feather.min.js"></script>
+    <script>
+      feather.replace()
+    </script>
 
     <footer class="footer mt-auto py-3">
       <div class="container text-center">

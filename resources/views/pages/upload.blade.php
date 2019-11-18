@@ -1,7 +1,7 @@
 @extends('layouts.dashboardlayout')
 
 @section('currentUpload')
-  <span class="sr-only">(current)</span>
+<span class="sr-only">(current)</span>
 @endsection
 
 @section('activeUpload')
@@ -10,36 +10,51 @@ active
 
 @section('content')
 
-  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-    <h1 class="h1">{{$title}}</h1>
-  </div>
-      <div class="row text-center">
-        <div class="col-md-10 justify-content-md-center pr-5">
-          <div class="p-5 bg-white shadow rounded-lg"><img src="https://res.cloudinary.com/mhmd/image/upload/v1557366994/img_epm3iz.png" alt="" width="200" class="d-block mx-auto mb-4 rounded-pill">
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+  <h1 class="h1">{{$title}}</h1>
+</div>
+<div class="row text-center">
+  <div class="col-md-10 justify-content-md-center pr-5">
+    <div class="panel panel-default">
+     <div class="panel-heading"><strong>Upload Files</strong> <small>Bootstrap files upload</small></div>
+     <div class="panel-body text-center">
 
-            <!-- Default bootstrap file upload-->
+       <!-- Standar Form -->
+       <h4>Select files from your computer</h4>
+       <form action="" method="post" enctype="multipart/form-data" id="js-upload-form">
+         <div class="form">
+           <div class="form-group text-center">
+             <input type="file" name="files[]" id="js-upload-files" multiple hidden>
+           </div>
+           <button type="submit" class="btn btn-sm btn-outline-danger" id="js-upload-submit">Upload files</button>
+         </div>
+       </form>
 
-            <h6 class="text-center mb-4 text-muted">
-              Upload your files here
-            </h6>
+       <!-- Drop Zone -->
+       <h4>Or drag and drop files below</h4>
+       <div class="upload-drop-zone" id="drop-zone">
+         Just drag and drop files here
+       </div>
 
-            <div class="custom-file overflow-hidden rounded-pill mb-5">
-              <input id="customFile" type="file" class="custom-file-input rounded-pill">
-              <label for="customFile" class="custom-file-label rounded-pill">Choose file</label>
-            </div>
-            <!-- End -->
+       <!-- Progress Bar -->
+       <div class="progress">
+         <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
+          <span class="sr-only">10% Complete</span>
+         </div>
+       </div>
 
-            <h6 class="text-center mb-4 text-muted">
-              Or a custom button that launches file browser
-            </h6>
+       <!-- Upload Finished -->
+       <div class="js-upload-finished">
+         <h3>Processed files</h3>
+         <div class="list-group">
+           <a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right">Success</span>image-01.jpg</a>
+           <a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right">Success</span>image-02.jpg</a>
+         </div>
+       </div>
+     </div>
+   </div>
 
-            <!-- Custom bootstrap upload file-->
-            <label for="fileUpload" class="file-upload btn btn-outline-danger btn-block rounded-pill shadow"><i class="fa fa-upload mr-2"></i>Browse for file ...
-                          <input id="fileUpload" type="file">
-                      </label>
-            <!-- End -->
-
-          </div>
-        </div>
-      </div>
-  @endsection
+ </div>
+</div>
+</div>
+@endsection
