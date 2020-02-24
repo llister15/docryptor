@@ -7,6 +7,24 @@ $(function() {
 
           var startUpload = function(files) {
               console.log(files)
+              $.ajax({
+                type: "POST",
+                enctype: 'multipart/form-data',
+                url: "http://docryptor.test/posts",
+                data: files,
+                success: function (data) {
+
+                    console.log(data);
+                    console.log("SUCCESS : ", data);
+
+                },
+                error: function (e) {
+
+                    console.log(e.responseText);
+                    console.log("ERROR : ", e);
+
+                }
+            });
           }
 
           uploadForm.addEventListener('submit', function(e) {

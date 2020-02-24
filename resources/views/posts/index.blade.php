@@ -9,6 +9,9 @@
 				<div class="well">
 					<h3>{{ $post->title }}</h3>
 					<small>Posted on {{ $post->created_at }}</small>
+					<div class="">
+						<img src="{{ $post->document }}">
+					</div>
 				</div>
 			@endforeach
 		@else

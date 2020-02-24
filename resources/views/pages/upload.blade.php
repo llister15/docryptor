@@ -21,39 +21,22 @@ active
 
        <!-- Standar Form -->
        <h4>Select files from your computer</h4>
-       <form action="" method="post" enctype="multipart/form-data" id="js-upload-form">
-         <div class="form">
-           <div class="form-group text-center">
-             <input type="file" name="files[]" id="js-upload-files" multiple hidden>
-           </div>
-           <button type="submit" class="btn btn-sm btn-outline-danger" id="js-upload-submit">Upload files</button>
-         </div>
-       </form>
-
-       <!-- Drop Zone -->
-       <h4>Or drag and drop files below</h4>
-       <div class="upload-drop-zone" id="drop-zone">
-         Just drag and drop files here
+       {!!  Form::open(['action' => 'PostsController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data', 'id' => 'js-upload-form']) !!}
+       <div class="form-group">
+        {{ Form::label('title', 'Title') }}
+        {{ Form::text('title', '', ['class' => 'form-control', 'placeholder' => 'Title']) }}
        </div>
-
-       <!-- Progress Bar -->
-       <div class="progress">
-         <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
-          <span class="sr-only">10% Complete</span>
-         </div>
-       </div>
-
-       <!-- Upload Finished -->
-       <div class="js-upload-finished">
-         <h3>Processed files</h3>
-         <div class="list-group">
-           <a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right">Success</span>image-01.jpg</a>
-           <a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right">Success</span>image-02.jpg</a>
-         </div>
-       </div>
+       <div class="form-group">
+        {{ Form::label('description', 'Description') }}
+        {{ Form::text('description', '', ['class' => 'form-control', 'placeholder' => 'Description']) }}
+      </div>
+      <div class="form-group">
+        {{ Form::file('document') }}
+      </div> 
+      {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
+       {!! Form::close() !!}
      </div>
    </div>
-
  </div>
 </div>
 </div>
